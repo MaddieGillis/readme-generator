@@ -43,10 +43,21 @@ const questions = [
     },
     {
         type: 'list',
-        message: 'Which license do you require?'
-        Choices: [license Choices]
+        message: 'Which license do you require?',
+        choices: ['license Choices', 'these area choice', 'not a test', 'lol jk its a test'],
+        name: 'userLicense'
     },
-    {},
+    {
+        type: 'input',
+        message: 'For contact purposes, what is your github?',
+        name: 'userGithub',
+
+    },
+    {
+        type: 'input',
+        message: 'For contact purposes, what is your email?',
+        name: 'userEmail',
+    }
 
 ];
 
