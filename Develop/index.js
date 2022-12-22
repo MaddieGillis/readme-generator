@@ -1,9 +1,54 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const { default: Choices } = require('inquirer/lib/objects/choices');
 
 // TODO: Create an array of questions for user input
-const questions = [];
+const questions = [
+    {
+        type: 'input',
+        message: 'What is your project name?',
+        name: 'userProject',
+    },
+    {
+        type: 'input',
+        message: 'What is the description of your project? I.E. why, motivation, problems solved, what you learned',
+        name: 'userDescription',
+    },
+    {
+        type: 'confirm',
+        message: 'Do you require a table of contents?',
+        name: 'userTable',
+    },
+    {
+        type: 'input',
+        message: 'If applicable, please explain the installation process, if not please leave blank',
+        name: 'userInstallation',
+
+    },
+    {
+        type: 'input',
+        message: 'Please explain how to use your application',
+        name: 'userUsage'
+    },
+    {
+        type: 'input',
+        message: 'Please list any collaborators, and any sources you used such as tutorials, art, other code, ect.',
+        name: 'userCredit',
+    },
+    {
+        type: 'input',
+        message: 'Please write tests for your program. If this is not applicable, please leave blank',
+        name: 'userTest'
+    },
+    {
+        type: 'list',
+        message: 'Which license do you require?'
+        Choices
+    },
+    {},
+
+];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
