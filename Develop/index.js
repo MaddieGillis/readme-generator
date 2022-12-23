@@ -44,7 +44,7 @@ const questions = [
     {
         type: 'list',
         message: 'Which license do you require?',
-        choices: ['license Choices', 'these area choice', 'not a test', 'lol jk its a test'],
+        choices: ['license Choices', 'these are a choice', 'not a test', 'lol jk its a test'],
         name: 'userLicense'
     },
     {
