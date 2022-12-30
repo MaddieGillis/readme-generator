@@ -1,23 +1,39 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  //const mit
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  let finalLicense = ''
+  if (data.userLicense === 'MIT') {
+    finalLicense = 'mit'
+  } else if (data.userLicense === 'The GNU General Public License v3.0') {
+    finalLicense = 'gnu'
+  } else if (data.userLicense === 'Apache License Version 2.0') {
+    finalLicense = 'apache'
+  } else if (data.userLicense === 'Mozilla Public Licence') {
+    finalLicense = 'mozilla'
+  } else if (data.userLicense === 'No License') {
+    finalLicense = 'The project creator has chosen not to use a license'
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# <Your-Project-Title>
+  return `# ${data.userProject}
 
   ## Description
   ${data.userDescription}
   
-  ## Table of Contents (Optional)
+  ## Table of Contents
   
   - [Installation](#installation)
   - [Usage](#usage)
@@ -38,7 +54,7 @@ function generateMarkdown(data) {
 
   ## License
   
-  //place holder
+  ${finalLicense}
 
   ## Contact for questions
 

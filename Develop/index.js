@@ -17,11 +17,6 @@ const questions = [
         name: 'userDescription',
     },
     {
-        type: 'confirm',
-        message: 'Do you require a table of contents?',
-        name: 'userTable',
-    },
-    {
         type: 'input',
         message: 'If applicable, please explain the installation process, if not please leave blank',
         name: 'userInstallation',
@@ -45,8 +40,8 @@ const questions = [
     {
         type: 'list',
         message: 'Which license do you require?',
-        choices: ['license Choices', 'these are a choice', 'not a test', 'lol jk its a test'],
-        name: 'userLicense'
+        choices: ['MIT', 'The GNU General Public License v3.0', 'Apache License Version 2.0', 'Mozilla Public Licence', 'No License'],
+        name: 'userLic'
     },
     {
         type: 'input',
@@ -58,7 +53,7 @@ const questions = [
         type: 'input',
         message: 'For contact purposes, what is your email?',
         name: 'userEmail',
-    }
+    },
 
 ];
 
@@ -75,4 +70,5 @@ function init() {
 }
 
 // Function call to initialize app
+
 init();
