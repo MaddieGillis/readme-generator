@@ -41,7 +41,7 @@ const questions = [
         type: 'list',
         message: 'Which license do you require?',
         choices: ['MIT', 'The GNU General Public License v3.0', 'Apache License Version 2.0', 'Mozilla Public Licence', 'No License'],
-        name: 'userLic'
+        name: 'userLicense'
     },
     {
         type: 'input',
@@ -57,18 +57,44 @@ const questions = [
 
 ];
 
+function renderLicenseSection() {
+    if (`${data.userLicense}` === 'MIT') {
+        const finalLicense = 'mit'
+    } else if (data.userLicense === 'The GNU General Public License v3.0') {
+        const finalLicense = 'gnu'
+    } else if (data.userLicense === 'Apache License Version 2.0') {
+     const finalLicense = 'apache'
+    } else if (data.userLicense === 'Mozilla Public Licence') {
+      const finalLicense = 'mozilla'
+    } else if (data.userLicense === 'No License') {
+        const finalLicense = 'The project creator has chosen not to use a license'
+    }
+}
+
+
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {    
+    fs.writeFile(fileName, generateMarkdown(data), function (err) {
+        if (err) {
+            return console.log(err);
+        }
+    });
+}
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer
-  .prompt(questions)
-  .then(answers => {
-    console.info('Answer:', answers.userDescription);
-  });
+    .prompt(questions)
+    .then(data => {
+        const dataLicense = JSON.stringify(data.userLicense);
+        console.info("License: ", dataLicense);
+        renderLicenseSection("dataLicense", dataLicense);
+        writeToFile("./README.md", data);
+        console.info('Answer:', data.userLicense);
+    });
 }
 
 // Function call to initialize app
 
 init();
+//let dataLicense = JSON.stringify(data.userLicense)
