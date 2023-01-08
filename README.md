@@ -1,5 +1,7 @@
-README Generator License: MIT
-Description
+# README Generator
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Description
 GIVEN a command-line application that accepts user input
 WHEN I am prompted for information about my application repository
 THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
@@ -18,23 +20,21 @@ THEN I am taken to the corresponding section of the README
 
 I built this to help write a professional readme in quick time.
 
-Table of Contents
-Installation
-Usage
-Credits
-License
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 
-Installation
+## Installation
 Inquirer 8.2.4 is required
 
-Usage
+## Usage
 Install Inquirer 8.2.4 and then run 'node index.js' in the terminal
 
-Credits
+## Credits
 Special thanks to Ryan, AJ, and Andy for staying late in office hours to help me
 
-Tests
-License
+## License
 https://opensource.org/licenses/MIT
 
 Contact for questions
