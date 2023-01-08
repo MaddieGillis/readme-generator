@@ -1,7 +1,7 @@
-# name
+# Name [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
   
   ## Description
-  desc
+  I learned stuff
   
   ## Table of Contents
   
@@ -14,21 +14,21 @@
   install
   
   ## Usage
-  use
+  answer questions
   
   ## Credits
-  credit
+  people and google
   
   ## Tests
-  test
+  there is no test
   
   ## License
   
-  mit
+  https://opensource.org/licenses/Apache-2.0
   
   ## Contact for questions
   
-  github
+  maddiegillis
   email
   
   

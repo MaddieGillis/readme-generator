@@ -2,7 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const { default: Choices } = require('inquirer/lib/objects/choices');
-const {generateMarkdown, renderLicenseSection} = require('./utils/generateMarkdown');
+const {generateMarkdown, renderLicenseSection, renderLicenseBadge} = require('./utils/generateMarkdown');
 
 
 // TODO: Create an array of questions for user input
@@ -90,6 +90,7 @@ function init() {
         const dataLicense = JSON.stringify(data.userLicense);
         console.info("License: ", dataLicense);
        data.finalLicense = renderLicenseSection(data);
+       data.badge = renderLicenseBadge(data);
         writeToFile("./README.md", data);
         console.info('Answer:', data.userLicense);
     });
