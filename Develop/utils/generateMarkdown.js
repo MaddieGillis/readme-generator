@@ -21,6 +21,7 @@ function renderLicenseBadge(data) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
+  const github = 'Im writing this as github isnt letting me push'
 }
 
 // TODO: Create a function that returns the license section of README
