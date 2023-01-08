@@ -1,4 +1,4 @@
-const index = require('C:\\Users\\madel\\Documents\\Bootcamp\\readme-generator\\Develop\\index.js')
+//const index = require('C:\\Users\\madel\\Documents\\Bootcamp\\readme-generator\\Develop\\index.js')
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
@@ -13,19 +13,20 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 
-function renderLicenseSection() {
-  let dataLicense = JSON.stringify(data.userLicense)
-  if (dataLicense === 'MIT') {
-    const finalLicense = 'mit'
+function renderLicenseSection(data) {
+  let finalLicense = null
+  if (data.userLicense === 'MIT') {
+    finalLicense = 'mit'
   } else if (data.userLicense === 'The GNU General Public License v3.0') {
-   const finalLicense = 'gnu'
+   finalLicense = 'gnu'
   } else if (data.userLicense === 'Apache License Version 2.0') {
-   const finalLicense = 'apache'
+   finalLicense = 'apache'
   } else if (data.userLicense === 'Mozilla Public Licence') {
-    const finalLicense = 'mozilla'
+    finalLicense = 'mozilla'
   } else if (data.userLicense === 'No License') {
-    const finalLicense = 'The project creator has chosen not to use a license'
+    finalLicense = 'The project creator has chosen not to use a license'
   }
+  return finalLicense;
 }
 
 // TODO: Create a function to generate markdown for README
@@ -57,7 +58,7 @@ function generateMarkdown(data) {
   
   ## License
   
-  ${finalLicense}
+  ${data.finalLicense}
   
   ## Contact for questions
   
@@ -69,5 +70,5 @@ function generateMarkdown(data) {
 
 }
 
-module.exports = generateMarkdown;
-module.exports = renderLicenseSection;
+module.exports = {generateMarkdown, renderLicenseSection};
+

@@ -2,7 +2,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const { default: Choices } = require('inquirer/lib/objects/choices');
-const generateMarkdown = require('./utils/generateMarkdown')
+const {generateMarkdown, renderLicenseSection} = require('./utils/generateMarkdown');
+
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -57,19 +58,19 @@ const questions = [
 
 ];
 
-function renderLicenseSection() {
-    if (`${data.userLicense}` === 'MIT') {
-        const finalLicense = 'mit'
-    } else if (data.userLicense === 'The GNU General Public License v3.0') {
-        const finalLicense = 'gnu'
-    } else if (data.userLicense === 'Apache License Version 2.0') {
-     const finalLicense = 'apache'
-    } else if (data.userLicense === 'Mozilla Public Licence') {
-      const finalLicense = 'mozilla'
-    } else if (data.userLicense === 'No License') {
+ /*function renderLicenseSection(data) {
+     if (data.userLicense === 'MIT') {
+         const finalLicense = 'mit'
+     } else if (data.userLicense === 'The GNU General Public License v3.0') {
+         const finalLicense = 'gnu'
+     } else if (data.userLicense === 'Apache License Version 2.0') {
+      const finalLicense = 'apache'
+     } else if (data.userLicense === 'Mozilla Public Licence') {
+       const finalLicense = 'mozilla'
+     } else if (data.userLicense === 'No License') {
         const finalLicense = 'The project creator has chosen not to use a license'
     }
-}
+ }*/
 
 
 // TODO: Create a function to write README file
@@ -88,7 +89,7 @@ function init() {
     .then(data => {
         const dataLicense = JSON.stringify(data.userLicense);
         console.info("License: ", dataLicense);
-        renderLicenseSection("dataLicense", dataLicense);
+       data.finalLicense = renderLicenseSection(data);
         writeToFile("./README.md", data);
         console.info('Answer:', data.userLicense);
     });
@@ -97,4 +98,4 @@ function init() {
 // Function call to initialize app
 
 init();
-//let dataLicense = JSON.stringify(data.userLicense)
+

@@ -1,7 +1,7 @@
-# asdf
+# name
   
   ## Description
-  asdf
+  desc
   
   ## Table of Contents
   
@@ -11,24 +11,25 @@
   - [License](#license)
   
   ## Installation
-  asdf
+  install
   
   ## Usage
-  asdf
+  use
   
   ## Credits
-  as
+  credit
   
   ## Tests
-  dfa
-
+  test
+  
   ## License
   
-   
-
+  mit
+  
   ## Contact for questions
-
-  asdf
-  asdf
-
-
+  
+  github
+  email
+  
+  
+  
